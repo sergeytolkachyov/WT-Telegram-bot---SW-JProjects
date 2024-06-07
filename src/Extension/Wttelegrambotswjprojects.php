@@ -286,10 +286,12 @@ final class Wttelegrambotswjprojects extends CMSPlugin implements SubscriberInte
 		if ($type == 'Project')
 		{
 			$item_id = $item->id;
+			$item_catid = $item->catid;
 		}
 		else
 		{
 			$item_id = $item->project_id;
+			$item_catid = $item->project->catid;
 		}
 
 		// Для версий и проектов ссылка на проект. Для документации - на документацию.
@@ -302,7 +304,7 @@ final class Wttelegrambotswjprojects extends CMSPlugin implements SubscriberInte
 		else
 		{
 
-			$link = \SWJProjectsHelperRoute::getProjectRoute($item_id);
+			$link = \SWJProjectsHelperRoute::getProjectRoute($item_id, $item_catid);
 		}
 
 		$link = HTMLHelper::link(
