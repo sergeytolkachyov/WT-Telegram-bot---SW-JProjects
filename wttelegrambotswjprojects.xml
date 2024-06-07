@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<extension type="plugin" method="upgrade" group="system">
+    <name>System - WT Telegram bot - SW JProjects</name>
+    <author>Sergey Tolkachyov</author>
+    <authorEmail>info@web-tolk.ru</authorEmail>
+    <authorUrl>https://web-tolk.ru/</authorUrl>
+    <creationDate>June 2024</creationDate>
+    <copyright>Sergey Tolkachyov</copyright>
+    <license>GNU General Public License v3.0</license>
+    <version>1.0.0</version>
+    <description>PLG_WTTELEGRAMBOTSWJPROJECTS_DESC</description>
+    <namespace path="src">Joomla\Plugin\System\Wttelegrambotswjprojects</namespace>
+    <scriptfile>script.php</scriptfile>
+	<media destination="plg_system_wttelegrambotswjprojects" folder="media">
+		<folder>js</folder>
+	</media>
+    <files>
+        <folder plugin="wttelegrambotswjprojects">src</folder>
+        <folder>services</folder>
+        <folder>language</folder>
+    </files>
+    <languages folder="language" client="administrator">
+        <language tag="en-GB">en-GB/plg_system_wttelegrambotswjprojects.ini</language>
+		<language tag="en-GB">en-GB/plg_system_wttelegrambotswjprojects.sys.ini</language>
+        <language tag="ru-RU">ru-RU/plg_system_wttelegrambotswjprojects.ini</language>
+        <language tag="ru-RU">ru-RU/plg_system_wttelegrambotswjprojects.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field addfieldprefix="Joomla\Plugin\System\Wttelegrambotswjprojects\Fields" type="plugininfo" name="plugininfo"/>
+				<field name="language_for_message" type="language" client="site" default="en-GB" label="PLG_WTTELEGRAMBOTSWJPROJECTS_LANGUAGE_FOR_MESSAGE" description="" />
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="WT Telegram bot updates">https://web-tolk.ru/component/swjprojects/jupdate?element=wttelegrambotswjprojects</server>
+    </updateservers>
+    <changelogurl>https://web-tolk.ru/jchangelog?element=wttelegrambotswjprojects</changelogurl>
+</extension>
